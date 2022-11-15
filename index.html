@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/style.css">
     <title>Document</title>
 </head>
+
 <body id="grad1">
     <div id="root">
 
@@ -27,7 +30,7 @@
                             <i class="bi bi-chat-left"></i>
                             <i class="bi bi-three-dots-vertical"></i>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -35,58 +38,86 @@
                 <div class="contact-box bg-alert">
                     <div class="photos flex aln-center">
                         <i class="bi bi-bell-slash "></i>
-                        <span class="ml text-contacts">dddd</span>                        
+                        <span class="ml text-contacts">dddd</span>
                         <a class="d-block" href="#">scarica</a>
                     </div>
 
                 </div>
 
                 <!-- barra di ricerca -->
-                <div class="search-box">
+                <div class="search-box flex aln-center">
+                    <i class="bi bi-search"></i>
                     <input class="input" placeholder=" insrisci il contatto da cercare" type="text">
                 </div>
 
                 <!-- contatti -->
-                <div class="contact-box bg-header d-flex">
+                <div class="contact-box  d-flex spc-btw" v-for="(element, index) in contacts">
                     <div class="photos flex aln-center">
-                        <img class="images" src="./assets/img/avatar_1.jpg" alt="">
-                        <span class="text-contacts" lang="it">Esempio</span>
-                        <div class="space flex">
-                            <p>12:00</p>
+                        <img class="images" :src="contacts[index].avatar" alt="">
+                        <span class="text-contacts" lang="it">{{contacts[index].name}}</span>
+                    </div>
+                    <div>
+                        <p>12:00</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- chat box -->
+            <div class="box2 flex">
+                <div class="col">
+                    <!-- header contatto -->
+                    <div class="contact-box bg-header">
+                        <div class="photos flex aln-center">
+                            <img class="images" src="./assets/img/avatar_1.jpg" alt="">
+                            <span class="text-contacts" lang="it">Esempio</span>
+
+                            <div class="space flex ml-2">
+                                <i class="bi bi-search"></i>
+                                <i class="bi bi-paperclip"></i>
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </div>
+                        </div>
+
+                        </div>
+                        <!-- container messaggi -->
+                        <div class="col">
+                            <div class=" contact-box flex justify-content-end mx-4 aln-center">
+                                <div class="message py-1 color-output-message">testo di prova</div>
+                            </div>
+                            <div class="contact-box flex justify-content-start mx-4 aln-center">
+                                <div class="message py-1 color-input-message">testo di prova</div>
+                            </div>
+
+                        </div>
+
+                        <!-- barra di input testo -->
+                        <div class="col margin-chat">
+                            <div class="contact-box bg-header flex aln-center">
+                                <i class="bi bi-emoji-smile fs-3"></i>
+                                <input class="border-input my-2 mx-2" type="text" placeholder="scrivi un messaggio...">
+                                <i class="bi bi-mic-fill fs-4"></i>
+                            </div>
                         </div>
 
 
-                    </div>
+                   
+
+
+
+
                 </div>
-                
 
 
-            </div>
 
-            
-            <!-- chat box -->
-            <div class="box2">
-                <div class="contact-box bg-header bd-l">
-                    <div class="photos flex aln-center">
-                        <img class="images" src="./assets/img/avatar_1.jpg" alt="">
-                        <span class="text-contacts" lang="it">Esempio</span>
-                    
-                    <div class="space flex ml-2">
-                        <i class="bi bi-search"></i>
-                        <i class="bi bi-paperclip"></i>
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </div>
-                </div>
-            </div>
-            
-                
-          
-    </div>
-   
-    <!-- vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <!-- main js -->
-    <script src="./assets/script.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+                <script src="./assets/script.js"></script>
 
 </body>
+
 </html>
