@@ -40,7 +40,7 @@
                         <i class="bi bi-bell-slash rounded circle p-2"></i>
                     </div>
                     <div>
-                        <span class="text-contacts">dddd</span>
+                        <span class="text-contacts">notifiche</span>
                         <a class="d-block mx-2" href="#">ciao</a>
                     </div>
 
@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- contatti -->
-                <div class="contact-box  d-flex aln-center" v-for="(element, index) in contacts">
+                <div class="contact-box  d-flex aln-center" v-for="(element, index) in contacts" click="contacts()">
                     <div class="photos">
                         <img class="images" :src="contacts[index].avatar" alt="">
                     </div>
@@ -88,18 +88,13 @@
                         </div>
 
                     </div>
-                    <!-- container messaggi -->
+
+                    <!--  messaggi -->
                     <div>
-                        <!-- messaggio input -->
-                        <div class=" contact-box flex justify-content-end mx-4 aln-center">
-                            <div class="message py-1 mx-3 color-output-message">
-                                <p class="mx-3"> testo di prova</p>
-                            </div>
-                        </div>
-                        <!-- messaggio output -->
-                        <div class="contact-box flex justify-content-start mx-4 aln-center">
-                            <div class="message py-1 color-input-message">
-                                <p class="mx-3"> testo di prova</p>
+                         
+                        <div class="contact-box flex justify-content-start mx-4 aln-center" v-for="(element,index) in contacts[indiced].messages">
+                            <div :class="(contacts[indiced].messages[index].status == 'sent') ? 'message-output' : 'message-input'">
+                                <p class="mx-3"> {{contacts[indiced].messages[index].message}}</p>
                             </div>
                         </div>
 

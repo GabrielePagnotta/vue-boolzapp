@@ -54,21 +54,29 @@
   }
 
 
-  .message{
-    width:30%;
+  .message-input{
+    max-width:50%;
     height:40px;
     border-radius: 5px;
     font-size: 20px;
+    background-color: #BEED8F;
     
   }
 
-  .color-output-message{
-  background-color: white;
+  .message-output{
+    max-width:50%;
+    max-height:100%;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: white;
+    margin-left:550px;
+
+    
   }
 
-  .color-input-message{
-    background-color: #BEED8F;
-  }
+  
+
+  
 
     
 

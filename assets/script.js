@@ -3,6 +3,7 @@ const app = new Vue({
     el:"#root",
 
     data:{
+        indiced:0,
         contacts: [
             {
             name: 'Michele',
@@ -166,5 +167,11 @@ const app = new Vue({
             ],
             }
             ]
+    },
+
+    methods:{
+        contacts(index){
+            this.indiced = index;
+        },
     },
 })
