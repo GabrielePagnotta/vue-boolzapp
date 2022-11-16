@@ -17,7 +17,7 @@
 
         <!-- box principale -->
         <div class="flex j-center mainbox">
-            <!-- contacts box -->
+            <!-- box sinistra -->
             <div class="box1">
 
                 <!-- header contatto -->
@@ -35,11 +35,13 @@
                 </div>
 
                 <!-- notifica -->
-                <div class="contact-box bg-alert">
-                    <div class="photos flex aln-center">
-                        <i class="bi bi-bell-slash "></i>
-                        <span class="ml text-contacts">dddd</span>
-                        <a class="d-block" href="#">scarica</a>
+                <div class="contact-box bg-alert flex py-3">
+                    <div>
+                        <i class="bi bi-bell-slash rounded circle p-2"></i>
+                    </div>
+                    <div>
+                        <span class="text-contacts">dddd</span>
+                        <a class="d-block mx-2" href="#">ciao</a>
                     </div>
 
                 </div>
@@ -51,10 +53,13 @@
                 </div>
 
                 <!-- contatti -->
-                <div class="contact-box  d-flex spc-btw" v-for="(element, index) in contacts">
-                    <div class="photos flex aln-center">
+                <div class="contact-box  d-flex aln-center" v-for="(element, index) in contacts">
+                    <div class="photos">
                         <img class="images" :src="contacts[index].avatar" alt="">
-                        <span class="text-contacts" lang="it">{{contacts[index].name}}</span>
+                    </div>
+                    <div class="w-100">
+                        <span class="text-contacts mx-2" lang="it">{{contacts[index].name}}</span>
+                        <p class="mx-2">ultimo accesso:</p>
                     </div>
                     <div>
                         <p>12:00</p>
@@ -82,29 +87,35 @@
                             </div>
                         </div>
 
-                        </div>
-                        <!-- container messaggi -->
-                        <div class="col">
-                            <div class=" contact-box flex justify-content-end mx-4 aln-center">
-                                <div class="message py-1 color-output-message">testo di prova</div>
+                    </div>
+                    <!-- container messaggi -->
+                    <div>
+                        <!-- messaggio input -->
+                        <div class=" contact-box flex justify-content-end mx-4 aln-center">
+                            <div class="message py-1 mx-3 color-output-message">
+                                <p class="mx-3"> testo di prova</p>
                             </div>
-                            <div class="contact-box flex justify-content-start mx-4 aln-center">
-                                <div class="message py-1 color-input-message">testo di prova</div>
-                            </div>
-
                         </div>
-
-                        <!-- barra di input testo -->
-                        <div class="col margin-chat">
-                            <div class="contact-box bg-header flex aln-center">
-                                <i class="bi bi-emoji-smile fs-3"></i>
-                                <input class="border-input my-2 mx-2" type="text" placeholder="scrivi un messaggio...">
-                                <i class="bi bi-mic-fill fs-4"></i>
+                        <!-- messaggio output -->
+                        <div class="contact-box flex justify-content-start mx-4 aln-center">
+                            <div class="message py-1 color-input-message">
+                                <p class="mx-3"> testo di prova</p>
                             </div>
                         </div>
 
+                    </div>
 
-                   
+                    <!-- barra di input testo -->
+                    <div class="margin-chat">
+                        <div class="contact-box bg-header flex aln-center">
+                            <i class="bi bi-emoji-smile fs-3"></i>
+                            <input class="border-input my-2 mx-2" type="text" placeholder="scrivi un messaggio...">
+                            <i class="bi bi-mic-fill fs-4"></i>
+                        </div>
+                    </div>
+
+
+
 
 
 
