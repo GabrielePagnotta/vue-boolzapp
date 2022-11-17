@@ -23,8 +23,8 @@
                 <!-- header contatto -->
                 <div class="contact-box bg-header">
                     <div class="photos flex aln-center">
-                        <img class="images" src="./assets/img/avatar_1.jpg" alt="">
-                        <span class="text-contacts" lang="it">Esempio</span>
+                        <img class="images" :src="contacts[indiced].avatar" alt="">
+                        <span class="text-contacts">{{contacts[indiced].name}}</span>
                         <div class="space flex">
                             <i class="bi bi-circle"></i>
                             <i class="bi bi-chat-left"></i>
@@ -41,7 +41,7 @@
                     </div>
                     <div>
                         <span class="text-contacts">notifiche</span>
-                        <a class="d-block mx-2" href="#">ciao</a>
+                        <a class="d-block mx-2" href="#">Attiva notifiche</a>
                     </div>
 
                 </div>
@@ -49,25 +49,23 @@
                 <!-- barra di ricerca -->
                 <div class="search-box flex aln-center">
                     <i class="bi bi-search"></i>
-                    <input class="input" placeholder=" insrisci il contatto da cercare" type="text">
+                    <input class="input" placeholder=" inserisci il contatto da cercare" type="text">
                 </div>
 
                 <!-- contatti -->
-                <div class="contact-box  d-flex aln-center" v-for="(element, index) in contacts" click="contacts()">
+                <div class="contact-box  d-flex aln-center" v-for="(element, index) in contacts" @click="contatti(index)">
                     <div class="photos">
                         <img class="images" :src="contacts[index].avatar" alt="">
                     </div>
                     <div class="w-100">
-                        <span class="text-contacts mx-2" lang="it">{{contacts[index].name}}</span>
+                        <span class="text-contacts mx-2">{{contacts[index].name}}</span>
                         <p class="mx-2">ultimo accesso:</p>
                     </div>
                     <div>
                         <p>12:00</p>
                     </div>
+                    
                 </div>
-
-
-
             </div>
 
 
@@ -77,8 +75,8 @@
                     <!-- header contatto -->
                     <div class="contact-box bg-header">
                         <div class="photos flex aln-center">
-                            <img class="images" src="./assets/img/avatar_1.jpg" alt="">
-                            <span class="text-contacts" lang="it">Esempio</span>
+                            <img class="images" :src="contacts[indiced].avatar" alt="">
+                            <span class="text-contacts" lang="it">{{contacts[indiced].name}}</span>
 
                             <div class="space flex ml-2">
                                 <i class="bi bi-search"></i>
@@ -104,7 +102,7 @@
                     <div class="margin-chat">
                         <div class="contact-box bg-header flex aln-center">
                             <i class="bi bi-emoji-smile fs-3"></i>
-                            <input class="border-input my-2 mx-2" type="text" placeholder="scrivi un messaggio...">
+                            <input class="border-input my-2 mx-2" v-model="chatbox" @keyup.enter="chatboxinput()" type="text" placeholder="scrivi  messaggio">
                             <i class="bi bi-mic-fill fs-4"></i>
                         </div>
                     </div>

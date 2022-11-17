@@ -4,6 +4,9 @@ const app = new Vue({
 
     data:{
         indiced:0,
+        chatbox:"",
+        chatbox2:"",
+
         contacts: [
             {
             name: 'Michele',
@@ -170,8 +173,41 @@ const app = new Vue({
     },
 
     methods:{
-        contacts(index){
+        contatti(index){
             this.indiced = index;
+        },
+
+        chatboxinput(){
+           let insert = this.contacts[this.indiced].messages
+
+            insert.push(
+                {
+                    date: '10/01/2020 15:51:00',
+                    message: this.chatbox,
+                    status: 'recived'
+                    }
+            )
+                    setTimeout(()=>{
+                        insert.push(
+                            {
+                                date: '10/01/2020 15:51:00',
+                                message: "ok",
+                                status: 'sent'
+                                }
+                        )
+
+                    },3000)
+        },
+
+        searchContact(){
+            this.contacts.forEach((element, index) => {
+                let x = element.name.toLowerCase();
+                if(x.includes(this.inputContact.toLowerCase())){
+                    return element.visible = true;
+                }else{
+                    return element.visible = false;
+                }
+            })
         },
     },
 })
